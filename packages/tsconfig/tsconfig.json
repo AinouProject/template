@@ -15,5 +15,6 @@
     "skipLibCheck": true,
     "lib": ["ESNext"],
     "allowUnreachableCode": true
-  }
+  },
+  "include": ["dummy.ts"]
 }

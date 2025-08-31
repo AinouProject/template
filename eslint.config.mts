@@ -5,7 +5,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginReact from 'eslint-plugin-react'
 import globals from 'globals'
-import eslintPluginValtio from 'eslint-plugin-valtio'
+import * as eslintPluginValtio from 'eslint-plugin-valtio'
 import eslintPluginTanstackQuery from '@tanstack/eslint-plugin-query'
 import eslintPluginTanstackRouter from '@tanstack/eslint-plugin-router'
 
@@ -22,14 +22,14 @@ export default defineConfig([
   },
   eslintPluginPrettierRecommended,
   {
-    ...eslintPluginReact.configs.recommended,
+    ...eslintPluginReact.configs.flat.recommended,
     languageOptions: { globals: { ...globals.serviceworker, ...globals.browser } },
     rules: {
-      ...eslintPluginReact.configs.recommended.rules,
+      ...eslintPluginReact.configs.flat.recommended.rules,
       'react/self-closing-comp': ['error', { component: true, html: false }],
     },
   },
-  eslintPluginReactHooks.configs.recommended,
+  eslintPluginReactHooks.configs['recommended-latest'],
   { ignores: ['**/generated/**', '**/dist/**'] },
   {
     rules: {
@@ -54,8 +54,7 @@ export default defineConfig([
       '@typescript-eslint/require-await': 'warn',
     },
   },
-  eslintPluginValtio.configs.flat.recommended,
-  eslintPluginValtio.configs.flat['jsx-runtime'],
+  eslintPluginValtio.configs['flat/recommended'],
   eslintPluginTanstackQuery.configs['flat/recommended'],
   eslintPluginTanstackRouter.configs['flat/recommended'],
   { files: ['**/*.{js,cjs,mjs}'], ...tseslint.configs.disableTypeChecked },
