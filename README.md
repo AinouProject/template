@@ -1,3 +1,5 @@
-# Ainou Project
+# Ainou Project Template
 
-Skeleton for node.js monorepo project.
+A skeleton for node.js and vite monorepo project.
+
+Use tsconfig `paths` for reference packages on dev.
