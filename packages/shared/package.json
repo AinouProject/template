@@ -1,0 +1,16 @@
+{
+  "name": "@example/shared",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

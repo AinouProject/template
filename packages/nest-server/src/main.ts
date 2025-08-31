@@ -5,6 +5,10 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { inspect } from 'util'
 import { AppModule } from './app/app.module.js'
 
+import { sayHello } from '@example/shared'
+
+sayHello()
+
 async function bootstrap() {
   inspect.defaultOptions.depth = 10
   const command = process.argv[2] ?? 'api'

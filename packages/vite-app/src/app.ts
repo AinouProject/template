@@ -1,1 +1,3 @@
-console.log('example')
+import { sayHello } from '@example/shared'
+
+sayHello()

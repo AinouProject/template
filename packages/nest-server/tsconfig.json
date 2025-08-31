@@ -1,10 +1,12 @@
 {
-  "extends": "@example/tsconfig/tsconfig.json",
+  "extends": "../tsconfig/tsconfig.json",
 
   "compilerOptions": {
     "outDir": "dist",
     "jsx": "preserve",
-    "lib": ["DOM"]
+    "lib": ["DOM"],
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"], "@example/shared": ["../shared/src/index.ts"] }
   },
 
   "include": ["src"]
