@@ -57,5 +57,6 @@ export default defineConfig([
   eslintPluginValtio.configs['flat/recommended'],
   eslintPluginTanstackQuery.configs['flat/recommended'],
   eslintPluginTanstackRouter.configs['flat/recommended'],
-  { files: ['**/*.{js,cjs,mjs}'], ...tseslint.configs.disableTypeChecked },
+  { files: ['**/*.{js,cjs,mjs}', 'packages/**/vite.config.ts'], ...tseslint.configs.disableTypeChecked },
+  { rules: { 'no-redundant-type-constituents': 'off' } },
 ])
