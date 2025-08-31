@@ -1,0 +1,9 @@
+{
+  "$schema": "https://swc.rs/schema.json",
+  "minify": false,
+  "env": { "targets": { "node": "24" } },
+  "jsc": {
+    "parser": { "syntax": "typescript", "decorators": true, "dynamicImport": true },
+    "transform": { "legacyDecorator": true, "decoratorMetadata": true }
+  }
+}

@@ -6,7 +6,7 @@
     "jsx": "preserve",
     "lib": ["DOM"],
     "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"], "@example/shared": ["../shared/src/index.ts"] }
+    "paths": { "@/*": ["./src/*"], "@example/shared": ["../shared/src/index.js"] }
   },
 
   "include": ["src"]

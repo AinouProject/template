@@ -8,9 +8,13 @@
     }
   },
   "scripts": {
-    "build": "tsc"
+    "watch": "swc --source-maps --copy-files --out-dir dist --strip-leading-paths --watch --log-watch-compilation src",
+    "build": "rimraf dist && swc --source-maps --copy-files --out-dir dist --strip-leading-paths src"
   },
   "devDependencies": {
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.5",
+    "rimraf": "^6.0.1",
     "typescript": "^5.9.2"
   }
 }
