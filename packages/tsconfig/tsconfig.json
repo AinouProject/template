@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "lib": ["ESNext"],
-    "allowUnreachableCode": true
+    "allowUnreachableCode": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["dummy.ts"]
 }
