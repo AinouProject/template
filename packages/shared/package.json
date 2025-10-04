@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.5",
+    "@swc/core": "1.13.20",
     "rimraf": "^6.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
