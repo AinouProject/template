@@ -1,13 +1,14 @@
-import { defineConfig } from 'eslint/config'
-import tseslint from 'typescript-eslint'
+import { type ConfigObject } from '@eslint/core'
 import eslint from '@eslint/js'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
-import eslintPluginReact from 'eslint-plugin-react'
-import globals from 'globals'
-import * as eslintPluginValtio from 'eslint-plugin-valtio'
 import eslintPluginTanstackQuery from '@tanstack/eslint-plugin-query'
 import eslintPluginTanstackRouter from '@tanstack/eslint-plugin-router'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslintPluginReact from 'eslint-plugin-react'
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
+import * as eslintPluginValtio from 'eslint-plugin-valtio'
+import { defineConfig } from 'eslint/config'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default defineConfig([
   eslint.configs.recommended,
@@ -29,7 +30,12 @@ export default defineConfig([
       'react/self-closing-comp': ['error', { component: true, html: false }],
     },
   },
-  eslintPluginReactHooks.configs['recommended-latest'],
+  {
+    plugins: {
+      'react-hooks': eslintPluginReactHooks,
+    },
+    extends: ['react-hooks/recommended'],
+  },
   { ignores: ['**/generated/**', '**/dist/**'] },
   {
     rules: {
@@ -59,4 +65,5 @@ export default defineConfig([
   eslintPluginTanstackRouter.configs['flat/recommended'],
   { files: ['**/*.{js,cjs,mjs}', 'packages/**/vite.config.ts'], ...tseslint.configs.disableTypeChecked },
   { rules: { 'no-redundant-type-constituents': 'off' } },
-])
+  ...eslintPluginTanstackQuery.configs['flat/recommended'],
+]) as ConfigObject[]

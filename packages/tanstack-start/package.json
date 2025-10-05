@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.14",
+    "@tanstack/eslint-plugin-query": "^5.91.0",
     "@tanstack/nitro-v2-vite-plugin": "^1.132.33",
     "@types/node": "^24.6.2",
     "@types/react": "^19.2.0",
@@ -15,13 +16,16 @@
     "tailwindcss": "^4.1.14",
     "typescript": "^5.9.3",
     "vite": "^7.1.9",
+    "vite-plugin-inspect": "^11.3.3",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tabler/icons-react": "^3.35.0",
+    "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-router": "^1.132.33",
+    "@tanstack/react-router-ssr-query": "^1.132.37",
     "@tanstack/react-start": "^1.132.36",
     "@vitejs/plugin-react": "^5.0.4",
     "class-variance-authority": "^0.7.1",
