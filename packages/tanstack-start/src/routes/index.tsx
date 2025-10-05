@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 
 export const Route = createFileRoute('/')({
@@ -16,24 +16,29 @@ function Home() {
       return () => clearTimeout(timer)
     }
   }, [loading])
+
+  const handleClick = useCallback(() => {
+    setLoading((loading) => !loading)
+  }, [])
+
   return (
     <div className="max-w-screen-md mx-auto p-4 flex gap-2">
-      <Button loading={loading} onClick={() => setLoading(!loading)}>
+      <Button loading={loading} onClick={handleClick}>
         Hello world
       </Button>
-      <Button variant="destructive" loading={loading} onClick={() => setLoading(!loading)}>
+      <Button variant="destructive" loading={loading} onClick={handleClick}>
         Hello world
       </Button>
-      <Button variant="secondary" loading={loading} onClick={() => setLoading(!loading)}>
+      <Button variant="secondary" loading={loading} onClick={handleClick}>
         Hello world
       </Button>
-      <Button variant="outline" loading={loading} onClick={() => setLoading(!loading)}>
+      <Button variant="outline" loading={loading} onClick={handleClick}>
         Hello world
       </Button>
-      <Button variant="ghost" loading={loading} onClick={() => setLoading(!loading)}>
+      <Button variant="ghost" loading={loading} onClick={handleClick}>
         Hello world
       </Button>
-      <Button variant="link" loading={loading} onClick={() => setLoading(!loading)}>
+      <Button variant="link" loading={loading} onClick={handleClick}>
         Hello world
       </Button>
     </div>
