@@ -6,6 +6,7 @@ import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import Inspect from 'vite-plugin-inspect'
 import Sonda from 'sonda/vite'
+import { devtools } from '@tanstack/devtools-vite'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -16,6 +17,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       tsconfigPaths(),
+      devtools(),
       tanstackStart(),
       nitroV2Plugin({ preset: 'node-server' }),
       viteReact({

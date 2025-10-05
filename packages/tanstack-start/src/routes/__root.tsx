@@ -2,6 +2,7 @@
 import React, { type ReactNode } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import appCss from '@/styles/app.css?url'
+import { Devtools } from '@/components/devtools'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -44,6 +45,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         {children}
         <Scripts />
+        <Devtools />
       </body>
     </html>
   )
