@@ -18,7 +18,11 @@ export default defineConfig(({ mode }) => {
       tsconfigPaths(),
       tanstackStart(),
       nitroV2Plugin({ preset: 'node-server' }),
-      viteReact(),
+      viteReact({
+        babel: {
+          plugins: ['babel-plugin-react-compiler'],
+        },
+      }),
       tailwindcss(),
       Inspect(),
       Sonda({

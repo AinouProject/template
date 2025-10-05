@@ -17,9 +17,9 @@ function Home() {
     }
   }, [loading])
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     setLoading((loading) => !loading)
-  }, [])
+  }
 
   return (
     <div className="max-w-screen-md mx-auto p-4 flex gap-2">
