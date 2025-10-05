@@ -24,9 +24,11 @@ export default defineConfig([
   eslintPluginPrettierRecommended,
   {
     ...eslintPluginReact.configs.flat.recommended,
+    ...eslintPluginReact.configs.flat['jsx-runtime'],
     languageOptions: { globals: { ...globals.serviceworker, ...globals.browser } },
     rules: {
       ...eslintPluginReact.configs.flat.recommended.rules,
+      ...eslintPluginReact.configs.flat['jsx-runtime'].rules,
       'react/self-closing-comp': ['error', { component: true, html: false }],
     },
   },

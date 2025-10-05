@@ -1,6 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router'
-import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { createFileRoute } from '@tanstack/react-router'
+import { useEffect, useState } from 'react'
 
 export const Route = createFileRoute('/')({
   component: Home,
