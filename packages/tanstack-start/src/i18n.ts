@@ -8,7 +8,7 @@ export async function createI18n(): Promise<i18nType> {
     fallbackLng: 'en',
     ns: ['common'],
     defaultNS: 'common',
-    debug: true,
+    debug: import.meta.env.DEV,
     resources: {
       en: {
         common: commonEn,
