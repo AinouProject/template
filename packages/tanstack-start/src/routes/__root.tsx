@@ -1,10 +1,13 @@
 /// <reference types="vite/client" />
 import React, { type ReactNode } from 'react'
-import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { Outlet, createRootRouteWithContext, HeadContent, Scripts } from '@tanstack/react-router'
 import appCss from '@/styles/app.css?url'
 import { Devtools } from '@/components/devtools'
+import { type i18n as i18nType } from 'i18next'
+import { QueryClient } from '@tanstack/react-query'
+import { I18nextProvider } from 'react-i18next'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{ i18n: i18nType; queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       {
@@ -29,9 +32,13 @@ export const Route = createRootRoute({
 })
 
 function RootComponent() {
+  const { i18n } = Route.useRouteContext()
+
   return (
     <RootDocument>
-      <Outlet />
+      <I18nextProvider i18n={i18n} defaultNS={'common'}>
+        <Outlet />
+      </I18nextProvider>
     </RootDocument>
   )
 }

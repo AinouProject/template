@@ -10,7 +10,8 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": { "@/*": ["./src/*"], "@example/shared": ["../shared/src/index.ts"] },
-    "lib": ["DOM", "DOM.Iterable", "ESNext"]
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"]
   },
 
   "include": ["src"]
